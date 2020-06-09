@@ -1,11 +1,12 @@
-import React, { useReducer } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'
 
 function App() {
 
   const profiles = [
     { name: "Taro", age: 23},
     {name: "hanako", age: 10},
-    {age: 10}
+    {name: "aaaa", age: 3}
   ]
 
   return (
@@ -23,9 +24,10 @@ const User = (props) => {
 return <div>Hi, I am {props.name}, age is {props.age}</div>
 }
 
-User.defaultProps = {
-  age: 1,
-  name: "名無し"
+//Userの受け付けるpropsの型を設定するよ
+User.propTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number.isRequired
 }
 
 export default App;
